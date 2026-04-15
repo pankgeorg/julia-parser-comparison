@@ -31,9 +31,9 @@ We're building [topiary-julia](https://github.com/pankgeorg/topiary-julia), a Ju
 
 | Priority | Issue | Impact | Status |
 |----------|-------|--------|--------|
-| P0 | `~` parsed as assignment instead of binary op | ~500 MTK/Turing files | Open |
-| P0 | `.~` broadcast tilde | MTK | Comes with P0 fix |
-| P1 | `:keyword` quoted symbols (`:in`, `:for`) | ~16 JuMP files | Open |
+| P0 | `~` parsed as assignment instead of binary op | ~500 MTK/Turing files | **Fixed** |
+| P0 | `.~` broadcast tilde | MTK | **Fixed** |
+| P1 | `:keyword` quoted symbols (`:in`, `:for`) | ~16 JuMP files | **Fixed** |
 | P2 | `primitive` as identifier | ~33 general files | Open |
 | P3 | Emoji identifiers | Pluto only | Open |
 | P3 | Subscript chars in identifiers | Symbolics | Open |
