@@ -16,16 +16,16 @@ We're building [topiary-julia](https://github.com/pankgeorg/topiary-julia), a Ju
 
 ### Focused corpus (Turing + JuMP + SciML, 1379 files)
 
-**tree-sitter success rate: 97.5%** (1344/1379)
+**tree-sitter success rate: 98.3%** (1356/1379)
 
 | Package | Total | TS-fail | TS-clean% |
 |---------|-------|---------|-----------|
-| ModelingToolkit | 577 | 18 | 96.9% |
-| ModelingToolkitBase | 426 | 9 | 97.9% |
+| ModelingToolkit | 577 | 11 | 98.1% |
+| ModelingToolkitBase | 426 | 6 | 98.6% |
 | ModelingToolkitStandardLibrary | 81 | 1 | 98.8% |
-| JuMP | 157 | 3 | 98.1% |
+| JuMP | 157 | 2 | 98.7% |
 | Turing | 54 | 1 | 98.1% |
-| DynamicPPL | 84 | 3 | 96.4% |
+| DynamicPPL | 84 | 2 | 97.6% |
 
 ### Root causes
 
