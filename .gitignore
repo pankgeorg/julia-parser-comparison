@@ -1,0 +1,10 @@
+# Generated corpus files (rebuild with build_corpus.jl)
+corpus_files.txt
+corpus_focus.txt
+corpus_packages.txt
+
+# Results (regenerate by running the scripts)
+results/
+
+# Julia artifacts
+Manifest.toml
