@@ -16,16 +16,16 @@ We're building [topiary-julia](https://github.com/pankgeorg/topiary-julia), a Ju
 
 ### Focused corpus (Turing + JuMP + SciML, 1379 files)
 
-**tree-sitter success rate: 60.0%** (828/1379)
+**tree-sitter success rate: 97.5%** (1344/1379)
 
 | Package | Total | TS-fail | TS-clean% |
 |---------|-------|---------|-----------|
-| ModelingToolkit | 577 | 280 | 51.5% |
-| ModelingToolkitBase | 426 | 219 | 48.6% |
-| ModelingToolkitStandardLibrary | 81 | 16 | 80.2% |
-| JuMP | 157 | 16 | 89.8% |
-| Turing | 54 | 11 | 79.6% |
-| DynamicPPL | 84 | 9 | 89.3% |
+| ModelingToolkit | 577 | 18 | 96.9% |
+| ModelingToolkitBase | 426 | 9 | 97.9% |
+| ModelingToolkitStandardLibrary | 81 | 1 | 98.8% |
+| JuMP | 157 | 3 | 98.1% |
+| Turing | 54 | 1 | 98.1% |
+| DynamicPPL | 84 | 3 | 96.4% |
 
 ### Root causes
 
@@ -33,10 +33,13 @@ We're building [topiary-julia](https://github.com/pankgeorg/topiary-julia), a Ju
 |----------|-------|--------|--------|
 | P0 | `~` parsed as assignment instead of binary op | ~500 MTK/Turing files | **Fixed** |
 | P0 | `.~` broadcast tilde | MTK | **Fixed** |
+| P0 | Whitespace-sensitive `~` (BINARY_TILDE scanner) | MTK | **Fixed** |
 | P1 | `:keyword` quoted symbols (`:in`, `:for`) | ~16 JuMP files | **Fixed** |
-| P2 | `primitive` as identifier | ~33 general files | Open |
-| P3 | Emoji identifiers | Pluto only | Open |
-| P3 | Subscript chars in identifiers | Symbolics | Open |
+| P2 | `primitive`, `abstract`, `mutable` as identifiers | ~33 general files | **Fixed** |
+| P2.5 | Operator subscript/superscript suffixes (`+₁`, `→ₜ`) | Symbolics | **Fixed** |
+| P3 | Emoji identifiers (BMP So + SMP scanner) | Pluto | **Fixed** (partial) |
+| P3 | `import ..@macro` | SciML | **Fixed** |
+| — | Semicolons in vectors `[a, b; c]` | JuMP | **Fixed** |
 
 ### Structural differences
 
